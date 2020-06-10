@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class ="container">
+        <div class="row">
+        <div class="col-md-12">
+            <h1 class="thin center">Recent Posts</h1>
+        </div>
+        
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card" style="height:300px;background:white">
+                    <div class="card-header" style="background-image:url('{{ post.image.url }}');background-size:cover;height:250px;">
+                     <h3 class="post-title" style="padding:10px">
+                       <a href="post/{{ post.slug }}" style="color:white">{{ post.title }}</a></p></h3>
+                    </div>
+   
+                    <p style="padding:10px 0px 0px 10px;">{{ post.summary }}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+      </div>
+
+{% endblock %}
